@@ -1,5 +1,5 @@
-var myLocation;
-var a;
+let myLocation;
+let a;
 
 function weatherReport() {
     myLocation = document.querySelector(".input").value;
