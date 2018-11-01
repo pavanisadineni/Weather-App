@@ -1,68 +1,76 @@
 body{
     padding: 0;
     margin: 0;
-    background: linear-gradient(to right, #abbaab, #ffffff);
+    background: linear-gradient(to right, lightblue, #ffffff);
 }
-#wrapper{
-    width: 100vw;
-    height: 100vh;
+#root{
+  margin-left: 18%;
+  margin-right: 10%;
+}
+.container{
     display: flex;
+    margin: auto; 
+    margin-top: 40px;  
+    flex-direction: column;
     justify-content: center;
+    vertical-align: middle;
+    width: 50%;
+
 }
-#container{
-    width:800px;
-    height: 500px;
+h1{
+    color:blueviolet;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: xx-large;
 }
-#container form{
-    width: 800px;
-    margin-left: 150px;
+input,button{
+    border-radius: 14px;
+    border: 1px solid blueviolet;
+    margin: 2px;
+    font-size: medium;
+    padding: 10px;
+    color:blueviolet;
 }
-#container h1{
-    text-align: center;
-    font-size: 40px;
-    font-family: cursive;
-    color: #000;
+input:focus{
+    background-color: antiquewhite;
+    border-radius: 14px;
+    border:1px solid blueviolet;
+    outline: none;
+    padding: 12px;
+
 }
-#container input[type="text"]{
-    display: inline-block;
-    width: 450px;
-    padding: 8px;
-    border:2px solid black;
-    border-radius:8px;
-    background: transparent;
-    font-family: cursive;
-    font-weight: bold;
-    font-size: 20px;
+form{
+    margin: 5px;
+    box-sizing: border-box;
 }
-#container input[type="submit"]{
-    background-color: coral; 
-    border: none;
-    border-radius:5px;
-    color: white;
-    margin-top: 20px;
-    padding: 14px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
+button{
+    color:white;
+    background-color: blueviolet;
+    outline: none;
+    border: 1px solid blueviolet;
+    padding: 9px;
 }
-#container ul li{
-    list-style: disc;
-    padding: 15px;
-    font-size:20px;
-    font-family: arial;
-    color: dodgerblue;
-    margin-left: 150px;
+button:hover{
+    padding: 11px;
+    background-color: lightslategrey;
+    outline: none;
+    border: 1px solid lightslategray;
 }
-#container ul li:nth-child(2n+1){
-    color: orangered;
+.result{
+    margin: 8px;
+    padding: 5px;
 }
-#container .input::placeholder{
-    color: black;
+ul li{
+    list-style-type: none;
+    color:blueviolet;
+    font-size: 18px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 5px;
+
 }
+
 .error{
-    text-align: center;
+    color: rgb(233, 99, 99);
+    padding: 8px;
     font-size: 20px;
-    color: red;
-    margin-top: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman';
 }
