@@ -19,18 +19,11 @@ getInfo=(Loc)=>{
     fetch(api)
     .then(response=>response.json())
     .then(data2=>{
-        console.log(data2.cod)
         if(data2.cod === 200){
-            this.setState(prevState=>({data:data2,isValid:true}));
-
-            console.log(this.state.data.sys.country)
-
-            
-
+            this.setState(prevState=>({data:data2,isValid:true})); 
 
         } else if(data2.cod === '404'){
             this.setState(prevState=>({...prevState.data,isValid:false}))
-            console.log(this.state.isValid)
         }
        
 
@@ -51,7 +44,27 @@ handleSubmit=(event)=>{
 
 }
 }
+hasWhiteSpace(strg){
+    
+    if(strg.indexOf(' ') >=0){
+        return strg.replace(' ','-')
+    }else{
+        return strg;
+    }
+}
+componentDidUpdate(){
 
+    let strg=this.state.data.weather[0].description;
+    let strng=this.hasWhiteSpace(strg);
+    console.log(strng)
+    let random_api=`https://source.unsplash.com/daily?sky+weather${strng}`;
+    console.log(random_api);
+ let elem=document.getElementById('root');
+   console.log(elem);
+   elem.style.backgroundImage=`url('${random_api}')`;
+
+    
+}
 
     render(){
         return (
