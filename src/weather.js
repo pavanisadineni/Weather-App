@@ -1,6 +1,10 @@
 import React,{Component} from 'react';
-import './Styles/Weather.css';
+import './Weather.css';
 import Result from './App';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+import simpleAction from './Actions/simpleAction'
+
 
 class Weather extends Component{
     constructor(props){
@@ -56,11 +60,8 @@ componentDidUpdate(){
 
     let strg=this.state.data.weather[0].description;
     let strng=this.hasWhiteSpace(strg);
-    console.log(strng)
     let random_api=`https://source.unsplash.com/daily?sky+weather${strng}`;
-    console.log(random_api);
  let elem=document.getElementById('root');
-   console.log(elem);
    elem.style.backgroundImage=`url('${random_api}')`;
 
     
@@ -69,7 +70,7 @@ componentDidUpdate(){
     render(){
         return (
             <div className="container">
-            <h1>Weather Application</h1>
+            <h1>Weather App</h1>
             <form onSubmit={this.handleSubmit}>
                 <input  type="text" placeholder="Enter the place..." ref={input=>this.search=input}></input>
                 <button  type="submit">Submit</button>
@@ -96,6 +97,13 @@ componentDidUpdate(){
         )
     }
 }
+const mapStatetoProps=state=>({
+    ...state
+})
+const mapDispatchtoProps=dispatch=>({
+    simpleaction:dispatch(simpleAction())
+})
 
+connect(mapStatetoProps,mapDispatchtoProps)(Weather);
 export default Weather;
 
